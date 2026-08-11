@@ -1,0 +1,855 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CÆCHET™ — The full lifecycle, run for you.</title>
+<link rel="icon" type="image/png" href="/favicon.png"/>
+<meta name="description" content="Cæchet is a retention marketing agency. Email, SMS, loyalty and subscription programs built and operated end-to-end for brands doing $1M–$50M+."/>
+<meta property="og:title" content="Cæchet — A Retention Marketing Agency."/>
+<meta property="og:description" content="Email, SMS, loyalty and subscription — built and operated end-to-end."/>
+<meta property="og:type" content="website"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Lato:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --banana:#FCF1B8; --banana-deep:#F5E280; --banana-soft:#FAF5DC;
+    --cobalt:#2048C8; --cobalt-bright:#4A74F5; --cobalt-night:#0F2F8C; --anchor:#1C1913; --anchor2:#2A251C;
+    --ink:#0A0A0A; --char:#1A1A1A; --grey:#555; --grey-light:#8A8479;
+    --paper:#FCFBF6;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  ::selection{background:var(--cobalt);color:var(--banana);}
+  html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  body{font-family:'Inter','Helvetica Neue',Helvetica,Arial,sans-serif;background:#FDFBF3 linear-gradient(180deg,#FBEDB4 0px,#FCF3CE 420px,#FDF8E6 980px,#FDFBF3 1520px) no-repeat;color:var(--ink);overflow-x:clip;font-weight:500;}
+  a{color:inherit;text-decoration:none;cursor:pointer;}
+  a:hover{color:var(--cobalt-night);}
+  button{font:inherit;cursor:pointer;border:none;background:none;color:inherit;padding:0;}
+  svg{display:block;}
+  img{-webkit-user-drag:none;}
+
+  .mono{font-family:'Lato',sans-serif;font-weight:500;letter-spacing:.04em;}
+  .mono.up{text-transform:uppercase;letter-spacing:.16em;}
+  .ref{font-family:'Lato',sans-serif;font-weight:600;font-size:10px;letter-spacing:.2em;color:var(--cobalt);text-transform:uppercase;}
+  .stamp{display:inline-block;border:1px solid var(--ink);padding:5px 10px 4px;font-family:'Lato',sans-serif;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;background:transparent;}
+  .stamp.cobalt{background:var(--cobalt);color:var(--banana);border-color:var(--cobalt);}
+  .wrap{max-width:1500px;margin:0 auto;padding:0 56px;}
+  @media(max-width:720px){.wrap{padding:0 24px;}}
+
+  /* ===== NAV ===== */
+  .nav{position:sticky;top:0;z-index:100;background:rgba(252,251,246,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--banana-deep);padding:15px 56px;display:grid;grid-template-columns:auto 1fr auto auto;gap:32px;align-items:center;}
+  .nav .word{display:inline-flex;align-items:center;line-height:1;}
+  .nav .word img{height:40px;width:auto;display:block;}
+  .nav .word .tm{font-family:'Lato',sans-serif;font-size:9px;margin-left:3px;margin-top:1px;font-weight:600;}
+  .nav .links{display:flex;gap:30px;justify-self:center;}
+  .nav .links a{font-family:'Lato',sans-serif;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--cobalt);transition:opacity .15s ease;}
+  .nav .links a:hover{opacity:.6;}
+  .nav .cta{background:var(--anchor);color:var(--banana);padding:11px 20px;font-family:'Lato',sans-serif;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--anchor);border-radius:2px;transition:transform .15s ease,background .15s ease;}
+  .nav .cta:hover{transform:translateY(-1px);color:var(--banana);background:var(--anchor2);}
+  .nav-burger{display:none;flex-direction:column;justify-content:center;gap:6px;width:44px;height:44px;align-items:flex-end;}
+  .nav-burger span{display:block;width:26px;height:2.5px;background:var(--ink);}
+  .nav-burger span:nth-child(2){width:18px;}
+
+  /* ===== HERO ===== */
+  .hero{background:transparent;color:var(--cobalt);padding:56px 56px 72px;position:relative;overflow:hidden;}
+  .hero-inner{max-width:1500px;margin:0 auto;}
+  .hero-center{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:44px 0 8px;}
+  .hero-wordmark{font-family:'Inter',sans-serif;font-weight:900;color:var(--ink);letter-spacing:-.065em;font-size:clamp(108px,20vw,340px);line-height:1;display:inline-flex;align-items:flex-start;}
+  .hero-wordmark sup{font-size:.13em;font-weight:500;letter-spacing:.02em;color:var(--ink);opacity:.35;line-height:1;margin-left:.04em;margin-top:.06em;}
+  .hero-tagline{margin-top:30px;display:inline-flex;align-items:center;gap:clamp(16px,3vw,28px);font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(20px,2.4vw,32px);letter-spacing:-.025em;color:var(--ink);text-transform:uppercase;line-height:1;}
+  .hero-tagline .rule{width:clamp(44px,8vw,120px);height:2px;background:var(--ink);opacity:.28;display:inline-block;}
+  .hero-tagline .phrase .alt{color:var(--cobalt);}
+  .hero-note{max-width:600px;margin:104px auto 0;text-align:center;font-size:clamp(15px,1.4vw,18px);font-weight:400;line-height:1.75;letter-spacing:.005em;color:#4B463B;}
+  .hero-note b{font-weight:700;color:var(--ink);}
+  .hero-actions{display:flex;gap:16px;justify-content:center;align-items:center;margin-top:56px;flex-wrap:wrap;}
+  .btn-primary{background:var(--anchor);color:#FDFBF3;padding:18px 30px;font-family:'Lato',sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;display:inline-flex;align-items:center;gap:12px;border:1px solid var(--anchor);border-radius:2px;transition:transform .15s ease,background .15s ease;}
+  .btn-primary:hover{transform:translateY(-2px);background:var(--anchor2);color:#FDFBF3;}
+  .btn-primary .arr{font-family:'Inter';font-weight:900;font-size:16px;}
+  .btn-ghost{font-family:'Lato',sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--cobalt);border-bottom:1px solid var(--cobalt);padding-bottom:3px;}
+  .hero-index{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:88px;border-top:1px solid var(--cobalt);border-bottom:1px solid var(--cobalt);}
+  .hero-index a{padding:26px 24px 28px;border-right:1px solid var(--cobalt);display:flex;flex-direction:column;gap:10px;transition:background .2s ease;}
+  .hero-index a:last-child{border-right:none;}
+  .hero-index a:hover{background:var(--banana-deep);}
+  .hero-index .hx-n{font-family:'Lato',sans-serif;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--cobalt);opacity:.6;}
+  .hero-index .hx-t{font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(20px,2vw,30px);letter-spacing:-.035em;text-transform:uppercase;color:var(--cobalt);line-height:.95;}
+  .hero-index .hx-d{font-size:13px;line-height:1.4;color:var(--cobalt-night);opacity:.8;font-weight:500;}
+  @media(max-width:920px){.hero{padding:52px 24px 56px;}.hero-index{grid-template-columns:1fr 1fr;}.hero-index a:nth-child(2){border-right:none;}.hero-index a:nth-child(1),.hero-index a:nth-child(2){border-bottom:1px solid var(--cobalt);}}
+  @media(max-width:520px){.hero-index{grid-template-columns:1fr;}.hero-index a{border-right:none;border-bottom:1px solid var(--cobalt);}.hero-index a:last-child{border-bottom:none;}}
+
+  /* ===== CHANNELS (framed tile) ===== */
+  .channels{background:transparent;padding:80px 0 112px;}
+  .ch-tile{background:var(--paper);border:1px solid rgba(28,25,19,.13);border-radius:10px;overflow:hidden;box-shadow:0 40px 80px -48px rgba(20,18,12,.4),0 2px 4px rgba(20,18,12,.03);}
+  .ch-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:44px 48px 34px;border-bottom:1px solid rgba(28,25,19,.12);}
+  .ch-head .ch-eye{display:block;font-family:'Lato',sans-serif;font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--cobalt);margin-bottom:14px;}
+  .ch-head h2{font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(30px,3.4vw,48px);letter-spacing:-.05em;text-transform:uppercase;color:var(--ink);line-height:.9;}
+  .ch-head h2 .alt{color:var(--cobalt);}
+  .ch-head .ch-sub{font-family:'Lato',sans-serif;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--grey-light);padding-bottom:8px;}
+  .ch-list{display:grid;grid-template-columns:1fr 1fr;}
+  .chx{position:relative;overflow:hidden;padding:44px 48px 46px;min-height:248px;display:flex;flex-direction:column;text-decoration:none;transition:background .35s cubic-bezier(.4,0,.2,1);}
+  .chx:nth-child(1),.chx:nth-child(3){border-right:1px solid rgba(28,25,19,.12);}
+  .chx:nth-child(1),.chx:nth-child(2){border-bottom:1px solid rgba(28,25,19,.12);}
+  .chx-top{display:flex;align-items:center;justify-content:space-between;}
+  .chx-ico{width:52px;height:52px;flex-shrink:0;border:1px solid rgba(32,72,200,.28);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--cobalt);transition:color .35s ease,border-color .35s ease;}
+  .chx-ico svg{width:24px;height:24px;display:block;}
+  .chx-i{font-family:'Lato',sans-serif;font-weight:600;font-size:12px;letter-spacing:.22em;color:var(--grey-light);transition:color .35s ease;}
+  .chx-t{margin-top:auto;padding-top:30px;font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(26px,2.7vw,36px);letter-spacing:-.04em;text-transform:uppercase;color:var(--ink);line-height:.95;transition:color .35s ease;}
+  .chx-d{margin-top:13px;font-size:15px;line-height:1.5;color:var(--grey);font-weight:500;max-width:320px;transition:color .35s ease;}
+  .chx-a{position:absolute;bottom:46px;right:48px;font-family:'Inter',sans-serif;font-weight:900;font-size:20px;color:var(--cobalt);opacity:0;transform:translateX(-8px);transition:opacity .35s ease,transform .35s ease;}
+  .chx:hover{background:var(--cobalt);}
+  .chx:hover .chx-ico,.chx:hover .chx-i,.chx:hover .chx-t{color:var(--banana);}
+  .chx:hover .chx-ico{border-color:rgba(252,241,184,.5);}
+  .chx:hover .chx-d{color:rgba(251,237,180,.82);}
+  .chx:hover .chx-a{opacity:1;transform:translateX(0);color:var(--banana);}
+  @media(max-width:720px){.channels{padding:36px 0 64px;}.ch-head{padding:30px 26px 24px;}.ch-list{grid-template-columns:1fr;}.chx{min-height:auto;padding:32px 28px 34px;}.chx:nth-child(1),.chx:nth-child(3){border-right:none;}.chx:nth-child(3){border-bottom:1px solid rgba(28,25,19,.12);}.chx-a{display:none;}.chx-t{padding-top:24px;}}
+
+  /* ===== STACK (sticky card pile) ===== */
+  .stack{position:relative;}
+  .stack-card{position:sticky;top:100px;}
+  .stack .channels{padding:48px 0;}
+  .stack .stats{padding:48px 0 128px;}
+  .stack-card > .wrap{transform-origin:center top;transition:transform .3s cubic-bezier(.22,.7,.24,1),filter .3s ease;will-change:transform;}
+  @media(max-width:720px){.stack-card{position:static;}.stack-card > .wrap{transform:none!important;filter:none!important;}.stack .channels{padding:36px 0;}.stack .stats{padding:36px 0 64px;}}
+
+  /* ===== MARQUEE ===== */
+  .marquee{background:var(--anchor);overflow:hidden;border-top:1px solid var(--cobalt);border-bottom:1px solid var(--cobalt);margin-top:72px;}
+  .marquee-inner{display:flex;align-items:stretch;}
+  .marquee-label{flex-shrink:0;display:flex;align-items:center;gap:11px;background:var(--banana);color:var(--ink);padding:0 28px;font-family:'Lato',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;}
+  .marquee-label .pulse{position:relative;width:8px;height:8px;border-radius:50%;background:var(--ink);}
+  .marquee-label .pulse::after{content:'';position:absolute;inset:0;border-radius:50%;background:var(--ink);animation:pulseRing 2s ease-out infinite;}
+  @keyframes pulseRing{0%{transform:scale(1);opacity:.7;}100%{transform:scale(3.2);opacity:0;}}
+  .marquee-track-wrap{position:relative;flex:1;overflow:hidden;padding:24px 0;}
+  .marquee-track{display:flex;gap:70px;align-items:center;animation:slide 48s linear infinite;white-space:nowrap;}
+  .marquee-track img{height:30px;width:140px;object-fit:contain;flex-shrink:0;opacity:.6;filter:brightness(0) invert(1);}
+  .marquee-track-wrap::before,.marquee-track-wrap::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none;}
+  .marquee-track-wrap::before{left:0;background:linear-gradient(to right,var(--anchor),transparent);}
+  .marquee-track-wrap::after{right:0;background:linear-gradient(to left,var(--anchor),transparent);}
+  @keyframes slide{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+  /* ===== SECTION HEADER ===== */
+  .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;padding-bottom:26px;border-bottom:1px solid var(--cobalt);margin-bottom:64px;}
+  .sec-head .sh-l{display:flex;flex-direction:column;gap:16px;max-width:760px;}
+  .sec-head h2{font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(34px,4.4vw,60px);letter-spacing:-.045em;line-height:.98;text-transform:uppercase;color:var(--ink);}
+  .sec-head h2 .alt{color:var(--cobalt);}
+  .sec-head .sh-r{text-align:right;font-family:'Lato',sans-serif;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--cobalt);opacity:.7;}
+
+  /* ===== STATS ===== */
+  .stats{background:transparent;color:var(--ink);padding:120px 0;}
+  .stats .ref{color:var(--cobalt);opacity:.72;}
+  .stats h2{color:var(--ink);}
+  .stats h2 .alt{color:var(--cobalt);}
+  .stats .sec-head{border-bottom-color:var(--cobalt);}
+  .stats .sh-r{color:var(--cobalt);opacity:.7;}
+  .stat-tile{background:var(--paper);border:1px solid rgba(28,25,19,.13);border-radius:10px;overflow:hidden;box-shadow:0 40px 80px -48px rgba(20,18,12,.4),0 2px 4px rgba(20,18,12,.03);}
+  .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+  .stat-cell{padding:44px 40px 46px;border-right:1px solid rgba(28,25,19,.12);}
+  .stat-cell:nth-child(4n){border-right:none;}
+  .stat-cell .n{font-family:'Inter',sans-serif;font-weight:900;letter-spacing:-.05em;line-height:.85;font-size:clamp(60px,7vw,104px);color:var(--cobalt);}
+  .stat-cell .n .u{font-size:.42em;opacity:.5;font-weight:700;letter-spacing:0;vertical-align:top;margin-left:.02em;}
+  .stat-cell .k{font-family:'Lato',sans-serif;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--grey-light);margin-top:22px;}
+  .stat-cell .d{font-size:14px;line-height:1.5;color:var(--grey);margin-top:12px;}
+  .stat-cell .d b{color:var(--ink);font-weight:800;}
+  @media(max-width:900px){.stat-grid{grid-template-columns:1fr 1fr;}.stat-cell:nth-child(2n){border-right:none;}.stat-cell:nth-child(1),.stat-cell:nth-child(2){border-bottom:1px solid rgba(28,25,19,.12);}}
+  @media(max-width:520px){.stat-grid{grid-template-columns:1fr;}.stat-cell{border-right:none;border-bottom:1px solid rgba(28,25,19,.12);}.stat-cell:last-child{border-bottom:none;}}
+
+  /* ===== PILLARS ===== */
+  .pillars-intro{padding:120px 56px 20px;}
+  .pillars-intro .big{font-family:'Inter',sans-serif;font-weight:900;letter-spacing:-.045em;line-height:.96;text-transform:uppercase;font-size:clamp(38px,5.6vw,88px);color:var(--ink);max-width:1200px;}
+  .pillars-intro .big .alt{color:var(--cobalt);}
+  .pillars-intro .lead{max-width:680px;margin-top:28px;font-size:19px;line-height:1.55;color:var(--char);font-weight:500;}
+
+  .pillar{padding:96px 0;border-top:1px solid rgba(32,72,200,.16);}
+  .pillar-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+  .pillar-copy .p-idx{display:flex;align-items:center;gap:14px;margin-bottom:26px;}
+  .pillar-copy .p-idx .badge{width:44px;height:44px;border-radius:50%;background:var(--cobalt);color:var(--banana);display:flex;align-items:center;justify-content:center;font-family:'Inter';font-weight:900;font-size:16px;letter-spacing:-.02em;}
+  .pillar-copy .p-idx .lbl{font-family:'Lato',sans-serif;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--cobalt);}
+  .pillar-copy h3{font-family:'Inter',sans-serif;font-weight:900;letter-spacing:-.045em;line-height:.96;text-transform:uppercase;font-size:clamp(38px,4.6vw,64px);color:var(--ink);}
+  .pillar-copy h3 .alt{color:var(--cobalt);}
+  .pillar-copy .p-lead{font-size:19px;line-height:1.55;color:var(--char);font-weight:500;margin-top:22px;max-width:520px;}
+  .pillar-feats{list-style:none;margin-top:30px;display:flex;flex-direction:column;gap:0;border-top:1px solid rgba(32,72,200,.18);}
+  .pillar-feats li{padding:16px 0;border-bottom:1px solid rgba(32,72,200,.18);display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:baseline;}
+  .pillar-feats li .fk{font-family:'Inter';font-weight:900;color:var(--cobalt);font-size:14px;}
+  .pillar-feats li .fv{font-size:15px;line-height:1.45;color:var(--char);}
+  .pillar-feats li .fv b{font-weight:800;color:var(--ink);}
+  .pillar-foot{display:flex;align-items:center;gap:28px;margin-top:34px;flex-wrap:wrap;}
+  .pillar-foot .p-stat{display:flex;flex-direction:column;gap:2px;}
+  .pillar-foot .p-stat .ps-n{font-family:'Inter';font-weight:900;font-size:34px;letter-spacing:-.04em;color:var(--cobalt);line-height:1;}
+  .pillar-foot .p-stat .ps-k{font-family:'Lato';font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--grey);}
+  .p-cta{font-family:'Lato',sans-serif;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--cobalt);display:inline-flex;align-items:center;gap:10px;border-bottom:1px solid var(--cobalt);padding-bottom:4px;transition:gap .15s ease;}
+  .p-cta:hover{gap:16px;color:var(--cobalt);}
+  .pillar:nth-of-type(even) .pillar-grid{direction:rtl;}
+  .pillar:nth-of-type(even) .pillar-grid>*{direction:ltr;}
+  @media(max-width:920px){.pillar-grid{grid-template-columns:1fr;gap:48px;}.pillar:nth-of-type(even) .pillar-grid{direction:ltr;}}
+
+  /* --- pillar visual shells --- */
+  .p-visual{display:flex;align-items:center;justify-content:center;position:relative;min-height:520px;}
+  .p-stage{position:relative;width:100%;max-width:460px;padding:44px 0;display:flex;align-items:center;justify-content:center;}
+  .p-stage::before{content:'';position:absolute;inset:0;background:linear-gradient(160deg,#FCF3CE,#FBEBB2);border:1px solid rgba(28,25,19,.14);}
+  .p-stage.dark::before{background:var(--anchor);border-color:rgba(28,25,19,.2);}
+  .p-stage>*{position:relative;z-index:1;}
+  .p-tag{position:absolute;z-index:2;top:16px;left:16px;font-family:'Lato';font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);background:rgba(253,251,243,.85);border:1px solid rgba(28,25,19,.16);padding:5px 9px;}
+  .p-stage.dark .p-tag{color:var(--banana);background:var(--cobalt-night);border-color:var(--banana-deep);}
+
+  /* phone */
+  .phone{width:250px;background:#0B0F2A;border-radius:34px;padding:9px;box-shadow:0 30px 60px -20px rgba(15,47,140,.5);}
+  .phone .screen{background:#fff;border-radius:26px;overflow:hidden;position:relative;height:490px;}
+  .phone .status{display:flex;justify-content:space-between;align-items:center;padding:12px 20px 8px;font-family:'Lato';font-size:11px;font-weight:700;color:var(--ink);}
+  .phone .status .icons{display:flex;gap:4px;align-items:center;}
+  .phone .status .icons span{width:15px;height:9px;background:var(--ink);border-radius:2px;opacity:.75;}
+  .phone .status .icons .battery{width:20px;}
+  .phone .scroll{overflow:hidden;height:calc(490px - 40px);}
+  .phone .scroll img{width:100%;display:block;}
+  .email-carousel{position:relative;height:100%;width:100%;background:#fff;overflow:hidden;}
+  .ec-track{display:flex;height:100%;will-change:transform;transition:transform .85s cubic-bezier(.66,0,.24,1);}
+  .ec-track img{min-width:100%;width:100%;height:100%;object-fit:cover;object-position:top center;}
+  .ec-count{position:absolute;top:14px;right:14px;z-index:3;font-family:'Lato';font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:rgba(11,15,42,.62);backdrop-filter:blur(4px);padding:5px 9px;border-radius:20px;}
+  .ec-dots{position:absolute;bottom:12px;left:0;right:0;z-index:3;display:flex;gap:5px;justify-content:center;}
+  .ec-dots i{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.55);box-shadow:0 1px 3px rgba(0,0,0,.35);transition:width .3s ease,background .3s ease;}
+  .ec-dots i.on{width:16px;border-radius:3px;background:#fff;}
+
+  /* sms thread */
+  .sms{padding:8px 14px 16px;display:flex;flex-direction:column;gap:9px;height:calc(490px - 40px);overflow:hidden;background:#fff;}
+  .sms .sms-hd{text-align:center;padding:6px 0 12px;border-bottom:1px solid #eee;margin-bottom:6px;}
+  .sms .sms-hd .av{width:40px;height:40px;border-radius:50%;background:var(--cobalt);color:var(--banana);display:flex;align-items:center;justify-content:center;font-family:'Inter';font-weight:900;font-size:16px;margin:0 auto 6px;overflow:hidden;}
+  .sms .sms-hd .av img{width:100%;height:100%;object-fit:cover;display:block;}
+  .sms .sms-hd .nm{font-family:'Inter';font-weight:800;font-size:13px;color:var(--ink);letter-spacing:-.01em;}
+  .sms .b{max-width:82%;padding:10px 13px;border-radius:17px;font-size:12.5px;line-height:1.4;font-weight:500;}
+  .sms .b.them{background:#ECECEC;color:var(--ink);align-self:flex-start;border-bottom-left-radius:5px;}
+  .sms .b.me{background:var(--cobalt);color:#fff;align-self:flex-end;border-bottom-right-radius:5px;}
+  .sms .b .em{font-weight:800;}
+  .sms .b img{width:100%;border-radius:9px;margin-top:6px;display:block;}
+  .sms .tstamp{align-self:center;font-family:'Lato';font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#aaa;margin:2px 0;}
+
+  /* loyalty card */
+  .loy{width:300px;display:flex;flex-direction:column;gap:14px;}
+  .loy .card{background:var(--anchor);color:var(--banana);border-radius:18px;padding:22px 22px 20px;box-shadow:0 24px 50px -18px rgba(15,47,140,.5);}
+  .loy .card .top{display:flex;justify-content:space-between;align-items:flex-start;}
+  .loy .card .tier{font-family:'Lato';font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;opacity:.72;}
+  .loy .card .mk{font-family:'Inter';font-weight:900;font-size:16px;letter-spacing:-.03em;}
+  .loy .card .pts{font-family:'Inter';font-weight:900;font-size:46px;letter-spacing:-.05em;line-height:1;margin-top:20px;}
+  .loy .card .pts .u{font-size:.34em;font-weight:700;opacity:.6;letter-spacing:.02em;}
+  .loy .card .bar{height:6px;border-radius:4px;background:rgba(252,241,184,.28);margin-top:16px;overflow:hidden;}
+  .loy .card .bar i{display:block;height:100%;width:68%;background:var(--banana);border-radius:4px;}
+  .loy .card .next{font-family:'Lato';font-size:10px;font-weight:600;letter-spacing:.04em;opacity:.82;margin-top:9px;}
+  .loy .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+  .loy .tiers .t{background:var(--banana-soft);border:1px solid var(--cobalt);padding:11px 8px;text-align:center;}
+  .loy .tiers .t.on{background:var(--anchor);color:var(--banana);}
+  .loy .tiers .t .tn{font-family:'Inter';font-weight:900;font-size:12px;letter-spacing:-.02em;}
+  .loy .tiers .t .tp{font-family:'Lato';font-size:8px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.7;margin-top:3px;}
+
+  /* subscription card */
+  .subm{width:300px;background:#fff;border:1px solid var(--cobalt);box-shadow:0 24px 50px -18px rgba(15,47,140,.4);}
+  .subm .sm-hd{background:var(--anchor);color:var(--banana);padding:14px 18px;display:flex;justify-content:space-between;align-items:center;font-family:'Lato';font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;}
+  .subm .sm-hd .live{display:flex;align-items:center;gap:7px;}
+  .subm .sm-hd .live i{width:7px;height:7px;border-radius:50%;background:var(--banana);}
+  .subm .sm-body{padding:20px 18px;}
+  .subm .prod{display:flex;gap:13px;align-items:center;padding-bottom:16px;border-bottom:1px solid rgba(32,72,200,.16);}
+  .subm .prod .th{width:52px;height:52px;background:var(--banana);border:1px solid var(--cobalt);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Inter';font-weight:900;color:var(--cobalt);font-size:20px;}
+  .subm .prod .pn{font-family:'Inter';font-weight:800;font-size:14px;color:var(--ink);letter-spacing:-.01em;line-height:1.2;}
+  .subm .prod .pm{font-family:'Lato';font-size:11px;font-weight:600;color:var(--grey);margin-top:4px;}
+  .subm .rows{display:flex;flex-direction:column;gap:0;margin:4px 0 16px;}
+  .subm .rw{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid rgba(32,72,200,.12);font-size:12.5px;}
+  .subm .rw .rk{font-family:'Lato';font-weight:600;letter-spacing:.04em;color:var(--grey);text-transform:uppercase;font-size:10px;}
+  .subm .rw .rv{font-family:'Inter';font-weight:800;color:var(--ink);font-size:13px;}
+  .subm .rw .rv.hl{color:var(--cobalt);}
+  .subm .acts{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;}
+  .subm .acts .a{border:1px solid var(--cobalt);color:var(--cobalt);text-align:center;padding:9px 4px;font-family:'Lato';font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:2px;}
+  .subm .acts .a.fill{background:var(--cobalt);color:var(--banana);}
+
+  /* ===== FOUNDER ===== */
+  .founder{position:relative;background:transparent;padding:130px 0 110px;margin-top:40px;overflow:hidden;}
+  .founder .sec-head{border-bottom-color:var(--cobalt);}
+  .f-statement{max-width:900px;margin:8px 0 4px;}
+  .f-statement .byline{display:flex;gap:12px;flex-wrap:wrap;font-family:'Lato';font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--cobalt);margin-bottom:26px;}
+  .f-main{display:grid;grid-template-columns:0.85fr 1.15fr;gap:56px;align-items:center;margin:8px 0 4px;}
+  .f-portrait{position:relative;overflow:hidden;background:var(--cobalt);border-radius:3px;}
+  .f-portrait img{width:100%;display:block;mix-blend-mode:luminosity;opacity:.96;}
+  .f-portrait::after{content:'';position:absolute;inset:0;background:linear-gradient(150deg,rgba(252,241,184,.28),rgba(32,72,200,.12) 55%,transparent);mix-blend-mode:screen;pointer-events:none;}
+  .f-av{width:76px;height:76px;border-radius:50%;object-fit:cover;flex-shrink:0;}
+  .f-statement h3{font-family:'Inter';font-weight:800;letter-spacing:-.035em;line-height:1.08;font-size:clamp(28px,3.6vw,46px);color:var(--ink);}
+  .f-statement h3 .alt{color:var(--cobalt);}
+  .f-sign{display:flex;align-items:center;gap:14px;margin-top:34px;padding-bottom:2px;}
+  .f-sign .nm{font-family:'Inter';font-weight:900;letter-spacing:-.03em;text-transform:uppercase;font-size:20px;color:var(--ink);}
+  .f-sign .role{font-family:'Lato';font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);}
+  .f-li{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--cobalt);color:var(--banana);transition:transform .2s ease,background .2s ease;}
+  .f-li svg{width:15px;height:15px;}
+  .f-li:hover{transform:translateY(-2px);background:var(--cobalt-bright);}
+  .seats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:70px;border-top:1px solid var(--cobalt);}
+  .seat{padding:30px 26px 30px 24px;border-right:1px solid rgba(28,25,19,.14);position:relative;min-height:200px;}
+  .seat:first-child{padding-left:0;}
+  .seat:last-child{border-right:none;}
+  .seat .sn{font-family:'Inter';font-weight:900;font-size:13px;color:var(--cobalt);letter-spacing:.02em;}
+  .seat .sk{font-family:'Lato';font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);margin:16px 0 12px;}
+  .seat .sv{font-size:14.5px;line-height:1.5;color:var(--grey);font-weight:500;}
+  .seat .sv b{font-weight:800;color:var(--ink);}
+  @media(max-width:820px){.seats{grid-template-columns:1fr 1fr;}.seat{padding:26px 22px 26px 0;}.seat:nth-child(2){border-right:none;}.seat:nth-child(1),.seat:nth-child(2){border-bottom:1px solid rgba(28,25,19,.14);}}
+  @media(max-width:480px){.seats{grid-template-columns:1fr;}.seat{border-right:none;border-bottom:1px solid rgba(28,25,19,.14);padding:24px 0;}.seat:last-child{border-bottom:none;}}
+
+  /* ===== OFFER / CTA ===== */
+  .offer{position:relative;background:var(--anchor);color:var(--banana);padding:120px 0;margin-top:180px;}
+  .offer::before{content:'';position:absolute;left:0;right:0;top:-180px;height:180px;background:linear-gradient(to bottom,rgba(10,10,10,0) 0%,rgba(10,10,10,0.06) 22%,rgba(10,10,10,0.22) 42%,rgba(10,10,10,0.5) 60%,rgba(10,10,10,0.8) 78%,var(--anchor) 92%);pointer-events:none;}
+  .offer .sec-head{border-bottom-color:rgba(252,241,184,.25);}
+  .offer .ref{color:var(--banana);opacity:.72;}
+  .offer h2{color:var(--banana);}
+  .offer h2 .alt{color:var(--banana-deep);}
+  .offer .sh-r{color:var(--banana);opacity:.6;}
+  .offer-lede{font-family:'Inter';font-weight:900;letter-spacing:-.045em;line-height:.98;text-transform:uppercase;font-size:clamp(40px,6vw,92px);color:var(--banana);margin-bottom:16px;}
+  .offer-lede .alt{color:var(--banana-deep);}
+  .offer-sub{max-width:660px;font-size:18px;line-height:1.6;color:rgba(252,241,184,.82);margin-bottom:0;}
+  .offer-sub b{color:var(--banana);font-weight:800;}
+  .offer-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:64px 0 72px;border-top:1px solid rgba(252,241,184,.22);}
+  .offer-metrics .om{padding:34px 26px 0 0;border-right:1px solid rgba(252,241,184,.14);}
+  .offer-metrics .om:last-child{border-right:none;}
+  .offer-metrics .omn{font-family:'Inter';font-weight:900;font-size:clamp(36px,4.6vw,60px);letter-spacing:-.045em;line-height:1;color:var(--banana);}
+  .offer-metrics .oml{font-family:'Lato';font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(252,241,184,.62);margin-top:14px;}
+  .cal-head{margin-bottom:20px;}
+  .cal-head .cal-k{display:block;font-family:'Inter';font-weight:900;letter-spacing:-.03em;text-transform:uppercase;font-size:clamp(22px,2.4vw,30px);color:var(--banana);}
+  .cal-head .cal-d{display:block;font-family:'Lato';font-size:13px;font-weight:500;letter-spacing:.02em;color:rgba(252,241,184,.6);margin-top:8px;}
+  .cal-frame{background:var(--anchor);border:none;padding:0;}
+  .calendly-inline-widget{min-width:320px;height:680px;}
+  @media(max-width:640px){.offer-metrics{grid-template-columns:1fr;}.offer-metrics .om{border-right:none;border-bottom:1px solid rgba(252,241,184,.14);padding:26px 0;}}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--anchor);color:var(--banana);padding:80px 0 28px;}
+  .foot-word{font-family:'Inter';font-weight:900;letter-spacing:-.06em;line-height:.86;font-size:clamp(64px,11vw,180px);color:var(--banana);text-align:center;padding-bottom:0;margin-bottom:48px;}
+  .foot-word sup{font-size:.18em;font-weight:500;opacity:.55;vertical-align:top;}
+  .foot-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:48px;margin-bottom:64px;}
+  .foot-col h4{font-family:'Lato';font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--banana);opacity:.55;margin-bottom:18px;}
+  .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:12px;}
+  .foot-col a,.foot-col li{font-size:14px;font-weight:600;color:var(--banana);}
+  .foot-col a:hover{opacity:.7;color:var(--banana);}
+  .foot-bot{padding-top:28px;border-top:1px solid rgba(252,241,184,.22);display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;font-family:'Lato';font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--banana);opacity:.7;}
+  @media(max-width:840px){.foot-grid{grid-template-columns:1fr 1fr;}}
+
+  /* ===== MOBILE MENU ===== */
+  .mobile-menu{position:fixed;inset:0;z-index:400;background:#FDFBF3 linear-gradient(180deg,#FBEDB4 0px,#FCF3CE 300px,#FDF8E6 620px,#FDFBF3 900px) no-repeat;color:var(--ink);transform:translateY(-101%);transition:transform .5s cubic-bezier(.76,0,.24,1);visibility:hidden;flex-direction:column;overflow-y:auto;display:none;}
+  body.menu-open .mobile-menu{transform:translateY(0);visibility:visible;}
+  body.menu-open{overflow:hidden;}
+  .mm-top{display:flex;justify-content:space-between;align-items:center;padding:12px 24px;border-bottom:1px solid var(--banana-deep);}
+  .mm-top .word img{height:40px;width:auto;display:block;}
+  .mm-close{width:44px;height:44px;display:flex;align-items:center;justify-content:center;position:relative;}
+  .mm-close span{position:absolute;width:26px;height:2.5px;background:var(--ink);}
+  .mm-close span:nth-child(1){transform:rotate(45deg);}
+  .mm-close span:nth-child(2){transform:rotate(-45deg);}
+  .mm-links{display:flex;flex-direction:column;padding:8px 24px 0;}
+  .mm-links a{font-family:'Inter';font-weight:900;letter-spacing:-.04em;line-height:1;font-size:clamp(34px,11vw,52px);text-transform:uppercase;color:var(--ink);padding:20px 0;border-bottom:1px solid rgba(28,25,19,.14);display:flex;justify-content:space-between;align-items:center;}
+  .mm-links a .ix{font-family:'Lato';font-size:11px;font-weight:600;letter-spacing:.18em;color:var(--cobalt);opacity:.75;}
+  .mm-cta{margin:28px 24px 40px;background:var(--anchor);color:#FDFBF3;border-radius:2px;padding:22px;display:flex;align-items:center;justify-content:center;gap:12px;font-family:'Lato';font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;border-radius:2px;}
+  @media(max-width:820px){
+    .nav{grid-template-columns:1fr auto;padding:12px 24px;align-items:center;}
+    .nav>span:empty{display:none;}
+    .nav .word{height:44px;display:flex;align-items:center;}
+    .nav .word img{height:32px;}
+    .nav-burger{height:44px;margin-right:-6px;padding-right:12px;}
+    .mm-top .word{height:44px;display:flex;align-items:center;}
+    .mm-top .word img{height:32px;}
+    .nav .links,.nav>.cta{display:none;}
+    .nav-burger{display:flex;}
+    .mobile-menu{display:flex;}
+    .stats,.founder,.offer,.pillar,.pillars-intro{padding-top:72px;padding-bottom:72px;}
+    .pillars-intro{padding-left:24px;padding-right:24px;}
+  }
+
+  /* ===== SELECTED WORK (case studies) ===== */
+  .receipts{background:transparent;padding:8px 0 120px;}
+  .work-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid rgba(28,25,19,.14);border-left:1px solid rgba(28,25,19,.14);}
+  .case{position:relative;border-right:1px solid rgba(28,25,19,.14);border-bottom:1px solid rgba(28,25,19,.14);padding:46px 46px 42px;display:flex;flex-direction:column;min-height:380px;transition:background .38s ease;}
+  .case .exh{font-family:'Lato',sans-serif;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--grey-light);transition:color .38s ease;}
+  .case .cat{font-family:'Lato',sans-serif;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--cobalt);opacity:.7;margin-top:30px;transition:color .38s ease,opacity .38s ease;}
+  .case .name{font-family:'Inter',sans-serif;font-weight:900;letter-spacing:-.05em;line-height:.9;font-size:clamp(40px,4.2vw,60px);text-transform:uppercase;color:var(--ink);margin-top:9px;transition:color .38s ease;}
+  .case .quoteline{font-family:'Inter',sans-serif;font-weight:500;font-size:15px;line-height:1.5;color:var(--grey);margin-top:20px;max-width:430px;transition:color .38s ease;}
+  .case .case-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:auto;padding-top:34px;}
+  .case .case-stats .stat{border-top:2px solid var(--cobalt);padding-top:14px;transition:border-color .38s ease;}
+  .case .case-stats .stat .n{font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(26px,2.6vw,34px);color:var(--cobalt);letter-spacing:-.04em;line-height:1;transition:color .38s ease;}
+  .case .case-stats .stat .l{font-family:'Lato',sans-serif;font-size:9px;font-weight:600;letter-spacing:.14em;color:var(--grey);opacity:.85;text-transform:uppercase;margin-top:8px;line-height:1.4;transition:color .38s ease,opacity .38s ease;}
+  .case:hover{background:var(--cobalt);}
+  .case:hover .exh{color:rgba(251,237,180,.7);}
+  .case:hover .cat{color:var(--banana);opacity:.9;}
+  .case:hover .name{color:var(--banana);}
+  .case:hover .quoteline{color:rgba(251,237,180,.85);}
+  .case:hover .case-stats .stat{border-color:var(--banana-deep);}
+  .case:hover .case-stats .stat .n{color:var(--banana);}
+  .case:hover .case-stats .stat .l{color:rgba(251,237,180,.8);opacity:1;}
+  @media(max-width:820px){.work-grid{grid-template-columns:1fr;}.case{min-height:auto;padding:36px 26px 32px;}}
+  @media(max-width:420px){.case .case-stats{grid-template-columns:1fr 1fr;gap:16px 12px;}}
+
+  /* ===== REVEAL ===== */
+  .rv{opacity:0;transform:translateY(46px);transition:opacity 1s cubic-bezier(.22,.7,.24,1),transform 1s cubic-bezier(.22,.7,.24,1);will-change:opacity,transform;}
+  .rv.in{opacity:1;transform:none;}
+  @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none;}.marquee-track{animation:none;}}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="nav">
+  <a href="#top" class="word" aria-label="Cæchet"><img src="caechet-icon-exports/caechet-icon-black-trimmed.png" alt="Cæchet"/></a>
+  <span></span>
+  <a href="https://calendly.com/caechet/introductory-call" target="_blank" rel="noopener" class="cta">Inquire →</a>
+  <button class="nav-burger" aria-label="Open menu"><span></span><span></span></button>
+</nav>
+
+<!-- ===== MOBILE MENU ===== -->
+<div class="mobile-menu">
+  <div class="mm-top">
+    <span class="word"><img src="caechet-icon-exports/caechet-icon-black-trimmed.png" alt="Cæchet"/></span>
+    <button class="mm-close" aria-label="Close menu"><span></span><span></span></button>
+  </div>
+  <div class="mm-links">
+    <a href="#email">Email<span class="ix">01</span></a>
+    <a href="#sms">SMS<span class="ix">02</span></a>
+    <a href="#loyalty">Loyalty<span class="ix">03</span></a>
+    <a href="#subscription">Subscription<span class="ix">04</span></a>
+  </div>
+  <a href="https://calendly.com/caechet/introductory-call" target="_blank" rel="noopener" class="mm-cta">Inquire →</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-center">
+      <div class="hero-wordmark rv">Cæchet<sup>®</sup></div>
+      <div class="hero-tagline rv"><span class="rule"></span><span class="phrase">Retain or <span class="alt">die.</span></span><span class="rule"></span></div>
+      <div class="hero-actions rv"><a href="#engine" class="btn-primary">See the engine <span class="arr">→</span></a></div>
+    </div>
+    <p class="hero-note rv" style="color:#0a0a0a;letter-spacing:.14em">A Retention Marketing Agency.<br/></p>
+  </div>
+</header>
+
+<!-- ===== MARQUEE ===== -->
+<div class="marquee">
+  <div class="marquee-inner">
+    <div class="marquee-label"><span class="pulse"></span>Trusted by</div>
+    <div class="marquee-track-wrap">
+    <div class="marquee-track">
+      <img src="assets/brands/hoodville.png" alt="Hoodville"/>
+      <img src="assets/brands/scentbird.png" alt="Scentbird"/>
+      <img src="assets/brands/true-religion.png" alt="True Religion"/>
+      <img src="assets/brands/konscious.png" alt="Konscious"/>
+      <img src="assets/brands/loops.png" alt="Loops"/>
+      <img src="assets/brands/lym.png" alt="Love Your Melon"/>
+      <img src="assets/brands/les-belles.png" alt="Les Belles"/>
+      <img src="assets/brands/rythm.png" alt="rythm"/>
+      <img src="assets/brands/bakerly.webp" alt="bakerly"/>
+      <img src="assets/brands/hoodville.png" alt="Hoodville"/>
+      <img src="assets/brands/scentbird.png" alt="Scentbird"/>
+      <img src="assets/brands/true-religion.png" alt="True Religion"/>
+      <img src="assets/brands/konscious.png" alt="Konscious"/>
+      <img src="assets/brands/loops.png" alt="Loops"/>
+      <img src="assets/brands/lym.png" alt="Love Your Melon"/>
+      <img src="assets/brands/les-belles.png" alt="Les Belles"/>
+      <img src="assets/brands/rythm.png" alt="rythm"/>
+      <img src="assets/brands/bakerly.webp" alt="bakerly"/>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="stack">
+<!-- ===== CHANNELS ===== -->
+<section class="channels stack-card">
+  <div class="wrap">
+    <div class="ch-tile rv">
+    <div class="ch-head">
+      <div><span class="ch-eye">What we do</span><h2>How We <span class="alt">Help.</span></h2></div>
+      <span class="ch-sub">End-to-end execution</span>
+    </div>
+    <div class="ch-list">
+      <a href="#email" class="chx"><div class="chx-top"><span class="chx-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="1.5"/><path d="M3 6.5l9 6.5 9-6.5"/></svg></span><span class="chx-i">01</span></div><span class="chx-t">Email</span><span class="chx-d">Fully built and managed — the flows and campaigns that carry the P&amp;L.</span><span class="chx-a">→</span></a>
+      <a href="#sms" class="chx"><div class="chx-top"><span class="chx-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M4 4.5h16a1.5 1.5 0 0 1 1.5 1.5v8a1.5 1.5 0 0 1-1.5 1.5H10l-4.5 3.5V15.5H4A1.5 1.5 0 0 1 2.5 14V6A1.5 1.5 0 0 1 4 4.5Z"/></svg></span><span class="chx-i">02</span></div><span class="chx-t">SMS</span><span class="chx-d">Written, built, and sent for you — conversations that convert in seconds.</span><span class="chx-a">→</span></a>
+      <a href="#loyalty" class="chx"><div class="chx-top"><span class="chx-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 3.2l2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 17.9 6.5 20l1.1-6.1L3.1 9.6l6.1-.8z"/></svg></span><span class="chx-i">03</span></div><span class="chx-t">Loyalty</span><span class="chx-d">No program? We pitch and build one. Already have one? We optimize it — then scale it.</span><span class="chx-a">→</span></a>
+      <a href="#subscription" class="chx"><div class="chx-top"><span class="chx-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 0 1-13.4 5.9"/><path d="M4 12A8 8 0 0 1 17.4 6.1"/><path d="M17 2.5V6.5H13"/><path d="M7 21.5V17.5H11"/></svg></span><span class="chx-i">04</span></div><span class="chx-t">Subscription</span><span class="chx-d">New or existing — we design the model, then scale the revenue you can forecast.</span><span class="chx-a">→</span></a>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<section class="stats stack-card">
+  <div class="wrap">
+    <div class="stat-tile rv">
+    <div class="ch-head">
+      <div><span class="ch-eye">The numbers</span><h2>Retention is <span class="alt">the multiplier.</span></h2></div>
+      <span class="ch-sub">Portfolio benchmarks</span>
+    </div>
+    <div class="stat-grid">
+      <div class="stat-cell"><div class="n" data-target="38"><span>0</span><span class="u">%</span></div><div class="k">Revenue from Retention</div><div class="d">Of total store revenue driven by <b>owned channels</b> — email, SMS, loyalty, subscription.</div></div>
+      <div class="stat-cell"><div class="n" data-target="42"><span>0</span><span class="u">×</span></div><div class="k">Return on Retention Spend</div><div class="d">Blended ROI across managed lifecycle programs. <b>The cheapest revenue you own.</b></div><style>.stat-cell .n[data-target="42"]{font-size:clamp(60px,7vw,104px);}</style></div>
+      <div class="stat-cell"><div class="n" data-target="61"><span>0</span><span class="u">%</span></div><div class="k">Avg. Open Rate</div><div class="d">On engaged-segment campaigns — deliverability and segmentation <b>done right</b>.</div></div>
+      <div class="stat-cell"><div class="n" data-target="4"><span>0</span></div><div class="k">New Brands per Quarter</div><div class="d">A hard cap. Every account gets a <b>senior operator</b>, not a queue.</div></div>
+    </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ===== PILLARS INTRO ===== -->
+<section class="wrap pillars-intro" id="engine">
+  <div class="rv">
+    <div class="big">One engine.<br/><span class="alt">Four channels.</span></div>
+    <p class="lead">Most brands bolt these on one at a time and wonder why nothing compounds. We run all four as a single lifecycle — every channel feeding the next, every send informed by the last.</p>
+  </div>
+</section>
+
+<!-- ===== PILLAR 01 · EMAIL ===== -->
+<section class="pillar" id="email">
+  <div class="wrap pillar-grid">
+    <div class="pillar-copy rv">
+      <div class="p-idx"><span class="badge">01</span><span class="lbl">Email</span></div>
+      <h3>The channel that <span class="alt">pays for everything else.</span></h3>
+      <p class="p-lead">Your highest-margin revenue line, operated end to end. We design, write, and build it so the inbox carries the P&amp;L while you run the business.</p>
+      <ul class="pillar-feats">
+        <li><span class="fk">01</span><span class="fv"><b>Lifecycle flows.</b> We build and optimize the automations that carry customers through every stage of the buyer journey — welcome, browse, cart, checkout, post-purchase, winback.</span></li>
+        <li><span class="fk">02</span><span class="fv"><b>Sending with intent.</b> A calendar built around segment value and customer goals — the right message to the right cohort, timed to what moves the needle without triggering fatigue.</span></li>
+        <li><span class="fk">03</span><span class="fv"><b>Segmentation &amp; deliverability.</b> The right message to the right list — building healthy engagement over time while lifting repeat purchase rate.</span></li>
+      </ul>
+      <div class="pillar-foot">
+        <div class="p-stat"><span class="ps-n">30–40%</span><span class="ps-k">of revenue, owned</span></div>
+        <a href="https://calendly.com/caechet/introductory-call" target="_blank" rel="noopener" class="p-cta">Inquire →</a>
+      </div>
+    </div>
+    <div class="p-visual rv">
+      <div class="p-stage">
+        <span class="p-tag">LIVE SENDS</span>
+        <div class="phone">
+          <div class="screen">
+            <div class="status"><span>9:41</span><span class="icons"><span></span><span></span><span class="battery"></span></span></div>
+            <div class="scroll"><div class="email-carousel" id="emailCarousel">
+              <div class="ec-track">
+                <img src="assets/emails/lym-monochrome.png" alt="Cæchet email — The Monochrome Collection"/>
+                <img src="assets/emails/lb-set-season.png" alt="Cæchet email — Set Season"/>
+                <img src="assets/emails/shf-running-shoe.png" alt="Cæchet email — The best running shoe"/>
+                <img src="assets/emails/ub-sea-elements.png" alt="Cæchet email — Sea Elements"/>
+                <img src="assets/emails/lym-mothers-day.png" alt="Cæchet email — Mother's Day"/>
+                <img src="assets/emails/lb-vacation.png" alt="Cæchet email — Vacation Ready"/>
+                <img src="assets/emails/ub-heavy-no-more.png" alt="Cæchet email — Heavy No More"/>
+                <img src="assets/emails/shf-gear.png" alt="Cæchet email — Gear"/>
+                <img src="assets/emails/lb-spring-staples.png" alt="Cæchet email — Spring Staples"/>
+                <img src="assets/emails/shf-engine.png" alt="Cæchet email — You Are The Engine"/>
+              </div>
+              <div class="ec-count"><span id="ecNow">01</span> / 10</div>
+              <div class="ec-dots" id="ecDots"></div>
+            </div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PILLAR 02 · SMS ===== -->
+<section class="pillar" id="sms">
+  <div class="wrap pillar-grid">
+    <div class="pillar-copy rv">
+      <div class="p-idx"><span class="badge">02</span><span class="lbl">SMS</span></div>
+      <h3>Conversations that <span class="alt">convert in seconds.</span></h3>
+      <p class="p-lead">We run SMS the way an agency should — orchestrated alongside email, not bolted on. Copy, creative, MMS and SMS, cadence, and compliance, all handled, all timed to the moment your customer is ready to buy.</p>
+      <ul class="pillar-feats">
+        <li><span class="fk">01</span><span class="fv"><b>Email &amp; SMS orchestration.</b> One calendar, two channels — sequenced so they compound instead of compete.</span></li>
+        <li><span class="fk">02</span><span class="fv"><b>MMS &amp; conversational.</b> Editorial MMS, two-way replies, and Text-to-Buy that closes in a single thread.</span></li>
+        <li><span class="fk">03</span><span class="fv"><b>Compliance &amp; list health.</b> TCPA-clean capture, quiet hours, and a list kept genuinely engaged.</span></li>
+      </ul>
+      <div class="pillar-foot">
+        <div class="p-stat"><span class="ps-n">98%</span><span class="ps-k">read within minutes</span></div>
+        <a href="https://calendly.com/caechet/introductory-call" target="_blank" rel="noopener" class="p-cta">Inquire →</a>
+      </div>
+    </div>
+    <div class="p-visual rv">
+      <div class="p-stage">
+        <span class="p-tag">Text-to-Buy Thread</span>
+        <div class="phone">
+          <div class="screen">
+            <div class="status"><span>1:11</span><span class="icons"><svg width="17" height="11" viewBox="0 0 17 11" fill="none"><rect x="0" y="7" width="3" height="4" rx="1" fill="#1C1913"/><rect x="4.5" y="5" width="3" height="6" rx="1" fill="#1C1913"/><rect x="9" y="2.5" width="3" height="8.5" rx="1" fill="#1C1913"/><rect x="13.5" y="0" width="3" height="11" rx="1" fill="#1C1913"/></svg><svg width="24" height="11" viewBox="0 0 24 11" fill="none"><rect x="0.5" y="0.5" width="20" height="10" rx="2.5" stroke="#1C1913" opacity=".45"/><rect x="2" y="2" width="16.2" height="7" rx="1.3" fill="#1C1913"/><rect x="21.5" y="3.5" width="1.6" height="4" rx=".8" fill="#1C1913" opacity=".45"/></svg></span></div>
+            <div class="sms">
+              <div class="sms-hd"><div class="av"><img src="caechet-icon-exports/caechet-icon-banana-rounded.png" alt="Cæchet"/></div><div class="nm">Client</div></div>
+              <div class="tstamp">Today 9:38 AM</div>
+              <div class="b them">The set you loved is almost gone — 6 left in your size. Want us to hold it? <span class="em">Reply YES.</span></div>
+              <div class="b me">YES</div>
+              <div class="b them">Done ✓ Held for 30 min. Tap to check out with 10% off → <span class="em">bit.ly/lb-set</span></div>
+              <div class="b me">Just ordered 🙌</div>
+              <div class="b them">Love that. Your <span class="em">VIP points</span> just unlocked free shipping on the next one.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PILLAR 03 · LOYALTY ===== -->
+<section class="pillar" id="loyalty">
+  <div class="wrap pillar-grid">
+    <div class="pillar-copy rv">
+      <div class="p-idx"><span class="badge">03</span><span class="lbl">Loyalty</span></div>
+      <h3>Turn buyers <span class="alt">into members.</span></h3>
+      <p class="p-lead">The lever that makes the second and third purchase feel inevitable. No program yet? We deliver a competitive analysis, a full pitch on how it should be built, then launch and scale it. Already running one? We optimize what's there.</p>
+      <ul class="pillar-feats">
+        <li><span class="fk">01</span><span class="fv"><b>Competitive analysis.</b> How your category rewards — and the white space we build your program into.</span></li>
+        <li><span class="fk">02</span><span class="fv"><b>Program design &amp; launch.</b> Points, tiers, rewards, and referrals — pitched, built, and taken live.</span></li>
+        <li><span class="fk">03</span><span class="fv"><b>Optimize &amp; wire in.</b> Have a program already? We sharpen it and thread balances through every email and text.</span></li>
+      </ul>
+      <div class="pillar-foot">
+        <div class="p-stat"><span class="ps-n">2.4×</span><span class="ps-k">repeat-purchase lift</span></div>
+        <a href="https://calendly.com/caechet/introductory-call" target="_blank" rel="noopener" class="p-cta">Inquire →</a>
+      </div>
+    </div>
+    <div class="p-visual rv">
+      <div class="p-stage">
+        <span class="p-tag">Rewards Program</span>
+        <div class="loy">
+          <div class="card">
+            <div class="top"><span class="tier">VIP Member</span><span class="mk">Cæchet Rewards</span></div>
+            <div class="pts">1,240<span class="u"> pts</span></div>
+            <div class="bar"><i></i></div>
+            <div class="next">360 pts to Elite — unlock early access &amp; free returns.</div>
+          </div>
+          <div class="tiers">
+            <div class="t"><div class="tn">Insider</div><div class="tp">0 pts</div></div>
+            <div class="t on"><div class="tn">VIP</div><div class="tp">1,000</div></div>
+            <div class="t"><div class="tn">Elite</div><div class="tp">1,600</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PILLAR 04 · SUBSCRIPTION ===== -->
+<section class="pillar" id="subscription">
+  <div class="wrap pillar-grid">
+    <div class="pillar-copy rv">
+      <div class="p-idx"><span class="badge">04</span><span class="lbl">Subscription</span></div>
+      <h3>Revenue you can <span class="alt">forecast.</span></h3>
+      <p class="p-lead">The most valuable revenue a brand can own — provided churn is managed. No subscription yet? We analyze the fit, pitch the model, and stand it up. Already running one? We defend every renewal with cadence and recovery built to retain.</p>
+      <ul class="pillar-feats">
+        <li><span class="fk">01</span><span class="fv"><b>Model &amp; launch.</b> The offer, cadence, and onboarding — pitched and built for brands starting from zero.</span></li>
+        <li><span class="fk">02</span><span class="fv"><b>Churn &amp; dunning recovery.</b> Failed-payment and skip-instead-of-cancel flows that quietly protect MRR.</span></li>
+        <li><span class="fk">03</span><span class="fv"><b>Optimize what's live.</b> Already subscribing customers? We tune cadence and cut every reason to cancel.</span></li>
+      </ul>
+      <div class="pillar-foot">
+        <div class="p-stat"><span class="ps-n">3.1×</span><span class="ps-k">LTV vs. one-time</span></div>
+        <a href="https://calendly.com/caechet/introductory-call" target="_blank" rel="noopener" class="p-cta">Inquire →</a>
+      </div>
+    </div>
+    <div class="p-visual rv">
+      <div class="p-stage">
+        <span class="p-tag">Manage Subscription</span>
+        <div class="subm">
+          <div class="sm-hd"><span>Your Subscription</span><span class="live"><i></i> Active</span></div>
+          <div class="sm-body">
+            <div class="prod">
+              <div class="th">S</div>
+              <div><div class="pn">Sea Elements — Daily Minerals</div><div class="pm">Subscribe &amp; Save · 15% off</div></div>
+            </div>
+            <div class="rows">
+              <div class="rw"><span class="rk">Delivers every</span><span class="rv">30 days</span></div>
+              <div class="rw"><span class="rk">Next order</span><span class="rv hl">Aug 12, 2026</span></div>
+              <div class="rw"><span class="rk">Price</span><span class="rv">$38.25 <span style="font-weight:500;color:var(--grey-light);text-decoration:line-through;">$45</span></span></div>
+            </div>
+            <div class="acts"><span class="a">Skip</span><span class="a">Swap</span><span class="a fill">Manage</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SELECTED WORK ===== -->
+<section class="receipts" id="work">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="sh-l"><h2>The receipts <span class="alt">on file.</span></h2></div>
+    </div>
+    <div class="work-grid">
+      <article class="case rv">
+        <div class="cat">Luxury Intimate Apparel · 2025</div>
+        <div class="name">Les Belles</div>
+        <p class="quoteline">Deliverability got us in the door. Automation is how we took over the house.</p>
+        <div class="case-stats">
+          <div class="stat"><div class="n">+138%</div><div class="l">Deliverability score</div></div>
+          <div class="stat"><div class="n">$287K</div><div class="l">Attributed Q4 rev</div></div>
+          <div class="stat"><div class="n">+75%</div><div class="l">YoY rev Sept–Dec</div></div>
+        </div>
+      </article>
+      <article class="case rv">
+        <div class="cat">Private Wellness Community · 2026</div>
+        <div class="name">Sweet Honey</div>
+        <p class="quoteline">Didn't reinvent the wheel. Refused to accept mediocrity.</p>
+        <div class="case-stats">
+          <div class="stat"><div class="n">45%</div><div class="l">Email attribution</div></div>
+          <div class="stat"><div class="n">+175%</div><div class="l">Revenue growth</div></div>
+          <div class="stat"><div class="n">×2</div><div class="l">Channel dominance</div></div>
+        </div>
+      </article>
+      <article class="case rv">
+        <div class="cat">Organic Herbal Wellness · 2026</div>
+        <div class="name">Upful Blends</div>
+        <p class="quoteline">Loyal community, leaky funnel. We unified every touchpoint into one engine.</p>
+        <div class="case-stats">
+          <div class="stat"><div class="n">+17%</div><div class="l">Total rev / 60d</div></div>
+          <div class="stat"><div class="n">+36%</div><div class="l">Conversion lift</div></div>
+          <div class="stat"><div class="n">5→1</div><div class="l">Silos unified</div></div>
+        </div>
+      </article>
+      <article class="case rv">
+        <div class="cat">Apparel · 9-Figure Scale</div>
+        <div class="name">True Religion</div>
+        <p class="quoteline">The goal: grow retention revenue 10% in six months. We hit 15% in five.</p>
+        <div class="case-stats">
+          <div class="stat"><div class="n">45%</div><div class="l">Retention rev MoM</div></div>
+          <div class="stat"><div class="n">35%</div><div class="l">Email + SMS MoM</div></div>
+          <div class="stat"><div class="n">+5%</div><div class="l">Mobile & loyalty</div></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOUNDER ===== -->
+<section class="founder" id="founder">
+  <div class="wrap">
+    <div class="sec-head rv" data-plx="0.14">
+      <div class="sh-l"><h2>About <span class="alt">THE FOUNDER.</span></h2></div>
+    </div>
+    <div class="f-statement rv" data-plx="0.08">
+      <div class="byline"><span>Brand · Agency · Platform · Partner</span><span>·</span><span>10+ years</span></div>
+      <h3>Eleven years running retention from <span class="alt">every seat at the table</span> — in-house operator, agency lead, and platform insider. Cæchet is the distillation of all of it.</h3>
+      <div class="f-sign"><img class="f-av" src="assets/founder-avatar.png" alt="Daniel Monte"/><span class="nm">Daniel Monte</span><span class="role">Founder · MIA</span><a class="f-li" href="https://www.linkedin.com/in/danieljmonte/" target="_blank" rel="noopener" aria-label="Daniel Monte on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.4 8.65 22 10.9 22 14.4V21h-4v-5.9c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.5-2.25 3.1V21H9z"/></svg></a></div>
+    </div>
+    <div class="seats" data-plx="0.05">
+      <div class="seat rv"><div class="sn">01</div><div class="sk">In-House</div><div class="sv"><b>True Religion · Scentbird.</b> Owned the email + SMS P&amp;L. Built the team that built the system.</div></div>
+      <div class="seat rv"><div class="sn">02</div><div class="sk">Agency</div><div class="sv"><b>The Snow Agency.</b> Scaled retention for 8/9-figure DTCs. <b>Acquired by Avenue Z.</b></div></div>
+      <div class="seat rv"><div class="sn">03</div><div class="sk">SaaS</div><div class="sv"><b>Privy · Sendlane.</b> Helped build the tools brands run on — shaping the platforms and the retention strategy behind them. <b>Acquired by Privy.</b></div></div>
+      <div class="seat rv"><div class="sn">04</div><div class="sk">The Edge</div><div class="sv"><b>Every side of the table.</b> Brand, agency, platform, partner — preferred rates passed to every client.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OFFER / CTA ===== -->
+<section class="offer" id="offer">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="sh-l"><h2>Inquire <span class="alt">today.</span></h2></div>
+    </div>
+    <div class="rv">
+      <div class="offer-lede">Retention, run by<br/>the <span class="alt">best in class.</span></div>
+      <p class="offer-sub">We take on a small number of brands at a time and operate their entire lifecycle as one system. The result is compounding revenue — owned, measured, and defended every cycle. <b>If that's the standard you're after, start a conversation.</b></p>
+    </div>
+    <div class="offer-metrics rv">
+      <div class="om"><div class="omn">38%</div><div class="oml">Revenue from retention</div></div>
+      <div class="om"><div class="omn">42×</div><div class="oml">Return on retention spend</div></div>
+      <div class="om"><div class="omn">$1–50M+</div><div class="oml">Brands we operate for</div></div>
+    </div>
+    <div class="cal-wrap rv">
+      <div class="cal-head"><span class="cal-k">Start a conversation</span><span class="cal-d">Select a time — we'll take it from there.</span></div>
+      <div class="cal-frame">
+        <div class="calendly-inline-widget" data-url="https://calendly.com/caechet/introductory-call?hide_gdpr_banner=1&background_color=0a0a0a&text_color=fcf1b8&primary_color=2048c8"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-word">Cæchet<sup>®</sup></div>
+    <div class="foot-bot"><span>Stay dangerous · Be human</span><span>© 2026 Cæchet™ · A Retention Agency</span></div>
+  </div>
+</footer>
+
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script>
+  // Mobile menu
+  var burger=document.querySelector('.nav-burger'),mmClose=document.querySelector('.mm-close');
+  if(burger)burger.addEventListener('click',function(){document.body.classList.add('menu-open');});
+  if(mmClose)mmClose.addEventListener('click',function(){document.body.classList.remove('menu-open');});
+  document.querySelectorAll('.mm-links a, .mm-cta').forEach(function(a){a.addEventListener('click',function(){document.body.classList.remove('menu-open');});});
+
+  // Reveal on scroll — section-scoped continuation cascade
+  var rvIO=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');rvIO.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -10% 0px'});
+  document.querySelectorAll('section, header, footer').forEach(function(sec){
+    var items=sec.querySelectorAll(':scope .rv');
+    Array.prototype.forEach.call(items,function(el,i){
+      var d=Math.min(i*0.08,0.48);
+      if(d>0){el.style.transitionDelay=d.toFixed(2)+'s';}
+    });
+  });
+  document.querySelectorAll('.rv').forEach(function(el){rvIO.observe(el);});
+
+  // Parallax layers (founder)
+  var plx=Array.prototype.slice.call(document.querySelectorAll('[data-plx]'));
+  if(plx.length&&!window.matchMedia('(prefers-reduced-motion:reduce)').matches){
+    var plxTick=false;
+    function plxUpdate(){
+      var vh=window.innerHeight;
+      plx.forEach(function(el){
+        var r=el.getBoundingClientRect();
+        if(r.bottom<0||r.top>vh)return;
+        if(!el.classList.contains('in'))return;
+        var prog=(vh-r.top)/(vh+r.height); // 0 entering .. 1 leaving
+        var speed=parseFloat(el.getAttribute('data-plx'))||0;
+        var y=(0.5-prog)*speed*vh;
+        el.style.transform='translateY('+y.toFixed(1)+'px)';
+      });
+      plxTick=false;
+    }
+    window.addEventListener('scroll',function(){if(!plxTick){plxTick=true;requestAnimationFrame(plxUpdate);}},{passive:true});
+    window.addEventListener('resize',plxUpdate);
+    plxUpdate();
+  }
+
+  // Sticky card-stack depth (going-through-mail effect)
+  (function(){
+    if(window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+    var cards=[].slice.call(document.querySelectorAll('.stack-card'));
+    if(cards.length<2)return;
+    var pinTop=100;
+    function upd(){
+      if(window.innerWidth<=720)return;
+      for(var i=0;i<cards.length-1;i++){
+        var cur=cards[i].querySelector('.wrap');
+        var nextW=cards[i+1].querySelector('.wrap');
+        if(!cur||!nextW)continue;
+        var nt=nextW.getBoundingClientRect().top;
+        var pad=parseFloat(getComputedStyle(cards[i+1]).paddingTop)||48;
+        var pinned=pinTop+pad;
+        var p=(window.innerHeight-nt)/(window.innerHeight-pinned);
+        p=Math.max(0,Math.min(1,p));
+        cur.style.transform='scale('+(1-p*0.06).toFixed(4)+')';
+        cur.style.filter='brightness('+(1-p*0.09).toFixed(4)+')';
+      }
+    }
+    var t=false;
+    window.addEventListener('scroll',function(){if(!t){requestAnimationFrame(function(){upd();t=false;});t=true;}},{passive:true});
+    window.addEventListener('resize',upd);
+    upd();
+  })();
+
+  // Animated stat counters
+  function animateCount(el){
+    var target=parseFloat(el.getAttribute('data-target')),dec=(target%1!==0),dur=1400,start=null,valSpan=el.querySelector('span');
+    function step(ts){if(!start)start=ts;var p=Math.min((ts-start)/dur,1),eased=1-Math.pow(1-p,3),cur=target*eased;valSpan.textContent=dec?cur.toFixed(1):Math.round(cur);if(p<1)requestAnimationFrame(step);else valSpan.textContent=dec?target.toFixed(1):target;}
+    requestAnimationFrame(step);
+  }
+  var countIO=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){animateCount(e.target);countIO.unobserve(e.target);}});},{threshold:.5});
+  document.querySelectorAll('.stat-cell .n[data-target]').forEach(function(el){countIO.observe(el);});
+
+  // Email pillar auto-carousel
+  (function(){
+    var wrap=document.getElementById('emailCarousel');if(!wrap)return;
+    var track=wrap.querySelector('.ec-track'),slides=track.querySelectorAll('img'),n=slides.length,
+        nowEl=document.getElementById('ecNow'),dotsEl=document.getElementById('ecDots'),idx=0,timer;
+    for(var i=0;i<n;i++){var d=document.createElement('i');if(i===0)d.className='on';dotsEl.appendChild(d);}
+    var dots=dotsEl.querySelectorAll('i');
+    function render(){track.style.transform='translateX(-'+(idx*100)+'%)';nowEl.textContent=('0'+(idx+1)).slice(-2);dots.forEach(function(d,j){d.classList.toggle('on',j===idx);});}
+    function next(){idx=(idx+1)%n;render();}
+    function start(){stop();timer=setInterval(next,2800);}
+    function stop(){if(timer)clearInterval(timer);}
+    if(!window.matchMedia('(prefers-reduced-motion:reduce)').matches){
+      var startIO=new IntersectionObserver(function(es){es.forEach(function(e){e.isIntersecting?start():stop();});},{threshold:.25});
+      startIO.observe(wrap);
+    }
+  })();
+</script>
+</body>
+</html>
