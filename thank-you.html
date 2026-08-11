@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Thank You — Cæchet® · A Retention Marketing Agency</title>
+<link rel="icon" type="image/png" href="/favicon.png"/>
+<meta name="robots" content="noindex"/>
+<meta name="description" content="Your call is booked. Here's what happens next."/>
+<meta property="og:title" content="Thank You — Cæchet®"/>
+<meta property="og:description" content="Your call is booked. Here's what happens next."/>
+<meta property="og:type" content="website"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Lato:wght@300;400;500;600;700;900&display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --banana:#FCF1B8; --banana-deep:#F5E280; --banana-soft:#FAF5DC;
+    --cobalt:#2048C8; --cobalt-bright:#4A74F5; --cobalt-night:#0F2F8C; --anchor:#1C1913; --anchor2:#2A251C;
+    --ink:#0A0A0A; --char:#1A1A1A; --grey:#555; --grey-light:#8A8479;
+    --paper:#FCFBF6;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  ::selection{background:var(--cobalt);color:var(--banana);}
+  html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  body{font-family:'Inter','Helvetica Neue',Helvetica,Arial,sans-serif;background:#FDFBF3 linear-gradient(180deg,#FBEDB4 0px,#FCF3CE 420px,#FDF8E6 980px,#FDFBF3 1520px) no-repeat;color:var(--ink);overflow-x:clip;font-weight:500;display:flex;flex-direction:column;min-height:100vh;}
+  a{color:inherit;text-decoration:none;cursor:pointer;}
+  a:hover{color:var(--cobalt-night);}
+  button{font:inherit;cursor:pointer;border:none;background:none;color:inherit;padding:0;}
+  svg{display:block;}
+  img{-webkit-user-drag:none;}
+  .wrap{max-width:1500px;margin:0 auto;padding:0 56px;width:100%;}
+  @media(max-width:720px){.wrap{padding:0 24px;}}
+
+  /* ===== NAV ===== */
+  .nav{position:sticky;top:0;z-index:100;background:rgba(252,251,246,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--banana-deep);padding:15px 56px;display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:center;}
+  .nav .word{display:inline-flex;align-items:center;line-height:1;}
+  .nav .word img{height:40px;width:auto;display:block;}
+  .nav .cta{background:var(--anchor);color:var(--banana);padding:11px 20px;font-family:'Lato',sans-serif;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--anchor);border-radius:2px;transition:transform .15s ease,background .15s ease;}
+  .nav .cta:hover{transform:translateY(-1px);color:var(--banana);background:var(--anchor2);}
+  @media(max-width:720px){.nav{padding:13px 24px;gap:16px;}.nav .word img{height:34px;}}
+
+  /* ===== HERO ===== */
+  .ty{flex:1;padding:96px 0 110px;}
+  .ty-inner{display:grid;grid-template-columns:1.15fr .85fr;gap:80px;align-items:start;}
+  .ref{font-family:'Lato',sans-serif;font-weight:600;font-size:10px;letter-spacing:.2em;color:var(--cobalt);text-transform:uppercase;}
+  .tick{width:56px;height:56px;border-radius:50%;background:var(--cobalt);display:flex;align-items:center;justify-content:center;margin-bottom:26px;}
+  .tick svg{width:26px;height:26px;}
+  .ty h1{font-family:'Inter';font-weight:900;letter-spacing:-.055em;line-height:.9;text-transform:uppercase;font-size:clamp(56px,8.2vw,124px);color:var(--ink);margin-top:14px;}
+  .ty h1 .alt{color:var(--cobalt);}
+  .ty-note{margin-top:28px;max-width:520px;font-size:17px;line-height:1.65;color:#3A352C;font-weight:400;}
+  .ty-note b{font-weight:700;color:var(--ink);}
+  .ty-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:38px;}
+  .btn-primary{background:var(--anchor);color:var(--banana);padding:16px 28px;font-family:'Lato',sans-serif;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;border-radius:3px;display:inline-flex;align-items:center;gap:10px;transition:transform .15s ease,background .15s ease;}
+  .btn-primary:hover{transform:translateY(-2px);background:var(--anchor2);color:var(--banana);}
+  .btn-ghost{border:1px solid rgba(28,25,19,.28);color:var(--ink);padding:16px 28px;font-family:'Lato',sans-serif;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;border-radius:3px;display:inline-flex;align-items:center;gap:10px;transition:border-color .15s ease,background .15s ease;}
+  .btn-ghost:hover{border-color:var(--cobalt);background:rgba(32,72,200,.05);color:var(--ink);}
+
+  /* next steps */
+  .steps{border-top:1.5px solid var(--cobalt);padding-top:0;}
+  .step{display:grid;grid-template-columns:40px 1fr;gap:22px;padding:26px 0;border-bottom:1px solid rgba(28,25,19,.14);align-items:start;}
+  .step:last-child{border-bottom:none;}
+  .step .sn{font-family:'Inter';font-weight:900;font-size:15px;letter-spacing:-.02em;color:var(--cobalt);padding-top:2px;}
+  .step .st{font-family:'Inter';font-weight:800;font-size:18px;letter-spacing:-.025em;color:var(--ink);margin-bottom:7px;}
+  .step .sd{font-size:14px;line-height:1.6;color:#4B463B;font-weight:400;}
+  .steps-k{font-family:'Lato';font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--grey-light);margin-bottom:20px;}
+  @media(max-width:960px){.ty-inner{grid-template-columns:1fr;gap:56px;}.ty{padding:64px 0 80px;}}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--anchor);color:var(--banana);padding:80px 0 28px;}
+  .foot-word{font-family:'Inter';font-weight:900;letter-spacing:-.06em;line-height:.86;font-size:clamp(64px,11vw,180px);color:var(--banana);text-align:center;padding-bottom:0;margin-bottom:48px;}
+  .foot-word sup{font-size:.18em;font-weight:500;opacity:.55;vertical-align:top;}
+  .foot-bot{padding-top:28px;border-top:1px solid rgba(252,241,184,.22);display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;font-family:'Lato';font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(252,241,184,.6);}
+
+  /* reveal */
+  .rv{opacity:0;transform:translateY(26px);transition:opacity 1s cubic-bezier(.16,.7,.2,1),transform 1s cubic-bezier(.16,.7,.2,1);}
+  .rv.in{opacity:1;transform:none;}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="nav">
+  <a href="/" class="word" aria-label="Cæchet"><img src="/caechet-icon-exports/caechet-icon-black-trimmed.png" alt="Cæchet"/></a>
+  <span></span>
+  <a href="/" class="cta">← Back to site</a>
+</nav>
+
+<!-- ===== THANK YOU ===== -->
+<main class="ty">
+  <div class="wrap">
+    <div class="ty-inner">
+      <div>
+        <div class="tick rv"><svg viewBox="0 0 24 24" fill="none" stroke="#FCF1B8" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 11"></polyline></svg></div>
+        <span class="ref rv">Booking confirmed</span>
+        <h1 class="rv">You're on<br/>the <span class="alt">calendar.</span></h1>
+        <p class="ty-note rv">Your calendar invite is already in your inbox. When we meet, we'll talk about what's happening in your business, what you're looking for, and where you'd like to go next.<br/><br/><b>No audit. No formal presentation.</b> Just a thoughtful conversation to see how we can help.</p>
+        <div class="ty-actions rv">
+          <a href="/#engine" class="btn-primary">See the engine <span>→</span></a>
+          <a href="https://www.linkedin.com/in/danieljmonte/" target="_blank" rel="noopener" class="btn-ghost">Connect on LinkedIn</a>
+        </div>
+      </div>
+      <div class="rv">
+        <div class="steps-k">What happens next</div>
+        <div class="steps">
+          <div class="step"><div class="sn">01</div><div><div class="st">Check your inbox</div><div class="sd">Your invitation is on its way. Add it to your calendar, and you'll receive a reminder before we meet.</div></div></div>
+          <div class="step"><div class="sn">02</div><div><div class="st">Bring the big picture</div><div class="sd">No formal preparation is needed. Come ready to share what you're working through, what you've tried, and what a successful outcome would look like.</div></div></div>
+          <div class="step"><div class="sn">03</div><div><div class="st">We'll talk it through</div><div class="sd">We'll listen, ask questions, and share a little about how our agency works, from full-service partnerships to fractional support.</div></div></div>
+          <div class="step"><div class="sn">04</div><div><div class="st">We'll find the right next step</div><div class="sd">If there's a strong fit, we'll talk about what working together could look like. If there isn't, we'll still point you toward useful information, resources, or a partner who may be better suited to help.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-word">Cæchet<sup>®</sup></div>
+    <div class="foot-bot"><span>Stay dangerous · Be human</span><span>© 2026 Cæchet™ · A Retention Agency</span></div>
+  </div>
+</footer>
+
+<script>
+  var rvIO=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');rvIO.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -10% 0px'});
+  document.querySelectorAll('main, footer').forEach(function(sec){
+    var items=sec.querySelectorAll(':scope .rv');
+    Array.prototype.forEach.call(items,function(el,i){el.style.transitionDelay=(i*0.09)+'s';rvIO.observe(el);});
+  });
+</script>
+</body>
+</html>
